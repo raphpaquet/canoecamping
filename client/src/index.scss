@@ -1,0 +1,27 @@
+@import './assets/variables';
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
+  width: 100% !important;
+  overflow: scroll;
+}
+body {
+  background-color: $primary-color;
+  color: white;
+  font: 1.6rem Helvetica;
+  height: 100%;
+  margin: 0;
+  width: 100% !important;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+
+.title {
+  font-family: $font-title;
+  text-transform: uppercase;
+}

@@ -1,0 +1,31 @@
+@import '../assets/_variables.scss';
+
+#mission {
+  background-color: $primary-color;
+  height: 100vh;
+  overflow: scroll;
+  .title {
+    float: left;
+    margin-left: 10rem;
+    color: white;
+    letter-spacing: 0.2em;
+  }
+  .mission {
+    display: flex;
+    color: white;
+    margin: 15rem 30rem;
+    .img-section {
+      display: flex;
+      flex-direction: column;
+      .mission-img {
+        width: 30rem;
+        height: auto;
+      }
+    }
+    p {
+      font-family: $font-text;
+      margin: 2rem 5rem;
+      text-align: justify;
+    }
+  }
+}

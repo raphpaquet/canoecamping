@@ -1,0 +1,40 @@
+@import '../assets/variables';
+
+#activity {
+  overflow: scroll;
+  .activity {
+      margin: 5rem 20rem;
+      display: flex;
+      align-items: center;
+    .activity-img {
+      width: 60rem;
+      z-index: -1;
+      position: relative
+    }
+    .activity-info {
+      // position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 5rem;
+      .activity-text {
+        color: white;
+        font-family: $font-text;
+        font-size: 1.6rem;
+        text-align: justify;
+      }
+      .know-more {
+        background-color: transparent;
+        border: white 1px solid;
+        cursor: pointer;
+        padding: 1rem;
+        font-family: $font-title;
+        color: white;
+        text-transform: uppercase;
+        margin: 2rem;
+        outline: none;
+      }
+    }
+  }
+  
+}

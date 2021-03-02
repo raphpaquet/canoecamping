@@ -1,0 +1,17 @@
+#site {
+  height: 100vh;
+  .rivers {
+    margin: 5rem 15rem;
+    display: flex;
+    justify-content: space-around;
+    .river-img {
+      width: 20rem;
+    }
+  }
+  .camping-site {
+    .camping-img {
+      width: 20rem;
+    }
+  }
+
+}

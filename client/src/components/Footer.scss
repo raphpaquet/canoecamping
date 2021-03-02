@@ -1,0 +1,36 @@
+@import '../assets/variables';
+
+#footer {
+  bottom: 0px;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  
+  .rights {
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  .social {
+    transform: scale(2);
+    margin: 0rem 1rem 0rem 1rem;
+    outline: none;
+    color: white;
+    text-decoration: none;
+  }
+  .admin {
+    font-size: 0.5rem;
+    text-decoration: none;
+    margin: 1rem;
+    outline: none;
+  }
+  .admin-text {
+    font-size: 0.5rem;
+    text-decoration: none;
+    margin: 1rem;
+    outline: none;
+    color: black;
+  }
+}
