@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/raphpaquet/canoecamping#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
   }
 }
