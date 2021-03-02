@@ -1,0 +1,69 @@
+@import '../assets/variables.scss';
+
+#contact {
+  height: 100vh;
+  .contact {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    .title-button {
+      float: right;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      margin: 5rem 4rem; 
+      width: 30rem;
+      justify-content: center;
+      .form-input {
+        color: white;
+        background-color: transparent;
+        height: 3em;
+        outline: none;
+        font-size: 0.8em;
+        font-family: $font-title;
+        border-bottom: 1px 0 0 0 solid $primary-color;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-radius: 0px;
+        .msg {
+          overflow: visible;
+          height: 4rem;
+          width:auto;
+        }
+      }
+    }
+  }
+}
+
+/* SEND BUTTON */
+.box-1 {
+  height: 33.33%;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.btn {
+  background-color: transparent;
+  color: $primary-color;
+  text-decoration: none;
+  outline: none;
+  border: 1px solid;
+  margin-top: 3em;
+  line-height: 40px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+  padding: 1px;
+  &:hover {
+    border: 2px solid;
+    font-style: italic;
+  }
+}
+
+
+@media (max-width: 480px) {
+}

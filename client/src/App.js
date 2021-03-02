@@ -18,9 +18,9 @@ function App() {
             Sorry this video is unavailable
           </video>
           <Navigation />
-          <button className="dispo-button">
+          <Link to="/reservations" ><button className="dispo-button">
             Voir nos disponibilités pour la saison 2021
-          </button>
+          </button></Link>
         </Route>
           <Route path="/mission" component={Mission} />
           <Route path="/activites" component={Activities} />

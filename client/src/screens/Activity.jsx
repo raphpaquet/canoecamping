@@ -5,6 +5,7 @@ export default function Activities() {
   return (
     <div id="activity">
       <Navigation />
+      <h2 className="title">Les activités</h2>
       <div className="activity">
         <img className="activity-img" src="/images/canoe.jpg" />
         <div className="activity-info">

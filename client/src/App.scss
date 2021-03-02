@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   #background-video {
     background-attachment: fixed;
     min-height: 100vh;
@@ -44,14 +47,15 @@
     }
   }
   .dispo-button {
+    align-self: center;
     color: white;
     font-size: 2rem;
     border: 1px white solid;
     width: fit-content;
     padding: 1.5rem;
     background-color: transparent;
-    margin-top: 20%;
     border-radius: 1rem;
+
     cursor: pointer;
     outline: none;
     &:hover {
