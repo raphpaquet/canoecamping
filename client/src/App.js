@@ -1,16 +1,21 @@
 import './App.scss';
 import Footer from './components/Footer';
 import { Router, Route, Switch, BrowserRouter, Link } from "react-router-dom";
-import Activities from './screens/Activity';
+import Activities from './screens/Canoe';
 import Mission from './screens/Mission';
 import Site from './screens/Site';
 import Contact from './screens/Contact';
 import Reservations from './screens/Reservations';
 import Navigation from './components/Navigation';
+import { createBrowserHistory } from 'history';
+import Canoe from './screens/Canoe';
+import Tube from './screens/Tube';
 
+
+const history = createBrowserHistory();
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <div className="App">
         <Route path="/" exact>
           <video id="background-video" autoPlay loop muted type="video/mp4">
@@ -23,12 +28,13 @@ function App() {
           </button></Link>
         </Route>
           <Route path="/mission" component={Mission} />
-          <Route path="/activites" component={Activities} />
+          <Route path="/canoe" component={Canoe} />
+          <Route path="/tube" component={Tube} />
           <Route path="/site" component={Site} />
           <Route path="/reservations" component={Reservations} /> 
           <Route path="/contact" component={Contact} />
         <footer>
-          <Footer />
+          {/* <Footer /> */}
         </footer>
       </div>
 
