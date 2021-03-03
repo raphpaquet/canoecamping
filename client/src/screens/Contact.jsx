@@ -4,7 +4,7 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Navigation from '../components/Navigation';
+import NavigationBG from '../components/NavigationBG';
 
 
 
@@ -81,7 +81,7 @@ export default function Contact() {
 
   return (
     <div id="contact">
-      <Navigation />
+      <NavigationBG />
       <div className="contact">
         <h2 className="title">Contactez-nous</h2>
         <form className="contact-form" onSubmit={handleSubmit}>

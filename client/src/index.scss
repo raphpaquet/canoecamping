@@ -7,7 +7,7 @@ html {
   overflow: scroll;
 }
 body {
-  background-color: $primary-color;
+  background-color: white;
   color: white;
   font: 1.6rem Helvetica;
   height: 100%;
@@ -24,6 +24,6 @@ a {
 .title {
   font-family: $font-title;
   text-transform: uppercase;
-  text-shadow: 2px 2px brown;
-  font-weight: 400;
+  // text-shadow: 2px 2px rgb(0, 36, 0);
+  font-weight: 500;
 }

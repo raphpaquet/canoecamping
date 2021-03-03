@@ -3,23 +3,34 @@
 #activity {
   overflow: scroll;
   .activity {
-      margin: 0rem 20rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      .nav-image-canoe{
+        background: url('../assets/canoe.jpg');
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+      }
+      .nav-image-tube {
+        background: url('../assets/tubing.jpg');
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+      }
     .img-text {
-      position: relative;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 40rem;
+      margin-right: 5rem;
       .activity-img {
         width: 100vw;
         height: 85vh;
       }
       .activity-title {
-        position: absolute;
-        bottom: 6rem;
-        left: 45rem;
-        font-size: 7rem;
-        text-shadow: 3px 3px rgb(0, 65, 19);
+        font-size: 6rem;
         font-weight: bold;
         cursor: pointer;
       }
@@ -30,7 +41,7 @@
       align-items: flex-start;
       margin: 5rem;
       .activity-text {
-        color: white;
+        color: black;
         font-family: $font-text;
         font-size: 1.6rem;
         text-align: justify;

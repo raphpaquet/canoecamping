@@ -1,11 +1,11 @@
 import Footer from '../components/Footer'
-import Navigation from '../components/Navigation'
+import NavigationBG from '../components/NavigationBG'
 import './Mission.scss'
 
 export default function Mission() {
   return (
     <div id="mission">
-      <Navigation />
+      <NavigationBG />
         <h2 className="title">Notre Mission</h2>
       <div className="mission">
         <div className="img-section">

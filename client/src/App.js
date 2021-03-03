@@ -10,22 +10,57 @@ import Navigation from './components/Navigation';
 import { createBrowserHistory } from 'history';
 import Canoe from './screens/Canoe';
 import Tube from './screens/Tube';
+import gsap from 'gsap';
 
 
 const history = createBrowserHistory();
+
+const tl = gsap.timeline({ defaults: { ease: 'power1.out' } })
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    tl.to('.text', { y:'0%', duration: 1, stagger: 0.50 });
+    tl.to('.slider', { y:"-100%", duration: 1.5, delay: 0.5 });
+    tl.to('.intro', { y: "-100%", duration: 1 }, "-=1");
+    tl.fromTo('nav', { opacity:0 }, { opacity:1 , duration: 1 });
+    tl.fromTo('.big-text', { opacity:0 }, { opacity:1 , duration: 1 }, "-=1" );
+  })
+
+
 function App() {
   return (
     <BrowserRouter history={history}>
       <div className="App">
         <Route path="/" exact>
-          <video id="background-video" autoPlay loop muted type="video/mp4">
-            <source src="canoe-video.mp4" />
-            Sorry this video is unavailable
-          </video>
-          <Navigation />
-          <Link to="/reservations" ><button className="dispo-button">
-            Voir nos disponibilités pour la saison 2021
-          </button></Link>
+          <main>
+            <section class="landing">
+                <video id="background-video" autoPlay loop muted type="video/mp4">
+                  <source src="canoe-video.mp4" />
+                  Sorry this video is unavailable
+                </video>
+              <nav className="navbarApp">
+                <Navigation style={{background: "none"}} />
+              </nav>
+              <Link to="/reservations"className="big-text"><button className="dispo-button">
+                Voir nos disponibilités pour la saison 2021
+                </button></Link>
+            </section>
+          </main>
+          <div className="intro">
+            <div className="intro-text">
+              <h1 class="hide">
+                <span className="text">Go</span>
+              </h1>
+              <h1 class="hide">
+                <span className="text">Play</span>
+              </h1>
+              <h1 class="hide">
+                <span className="text">Outside.</span>
+              </h1>
+            </div>
+
+          </div>
+          <div className="slider"></div>
+   
         </Route>
           <Route path="/mission" component={Mission} />
           <Route path="/canoe" component={Canoe} />

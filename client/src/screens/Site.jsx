@@ -1,11 +1,11 @@
-import Navigation from "../components/Navigation";
+import NavigationBG from "../components/NavigationBG";
 
 import './Site.scss';
 
 export default function Site() {
   return (
     <div id="site">
-      <Navigation />
+      <NavigationBG />
         <h2 className="title">Les rivières</h2>
       <div className="rivers">
         <div className="river">
