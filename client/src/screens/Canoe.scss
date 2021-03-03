@@ -3,16 +3,28 @@
 #activity {
   overflow: scroll;
   .activity {
-      margin: 5rem 20rem;
+      margin: 0rem 20rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-    .activity-img {
-      width: 60rem;
-      z-index: -1;
-      position: relative
+    .img-text {
+      position: relative;
+      text-align: center;
+      .activity-img {
+        width: 100vw;
+        height: 85vh;
+      }
+      .activity-title {
+        position: absolute;
+        bottom: 6rem;
+        left: 45rem;
+        font-size: 7rem;
+        text-shadow: 3px 3px rgb(0, 65, 19);
+        font-weight: bold;
+        cursor: pointer;
+      }
     }
     .activity-info {
-      // position: absolute;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
