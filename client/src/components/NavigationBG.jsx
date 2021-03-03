@@ -1,4 +1,4 @@
-import './Navigation.scss';
+import './NavigationBG.scss';
 import { Link } from 'react-router-dom';
 import DropDownMenu from '../components/DropDownMenu';
 
@@ -7,7 +7,7 @@ import DropDownMenu from '../components/DropDownMenu';
 export default function Navigation() {
 
   return (
-    <div className="navbar">
+    <div className="navbar-BG">
       <Link to="/"><img className="logo" src="/images/logo.png" /></Link>
       <ul className="list-action">
         <DropDownMenu 
@@ -27,7 +27,7 @@ export default function Navigation() {
           secondLink={"/region"} 
           third={"Sécurité"} 
           thirdLink={"/securite"}
-          fourth={"le site"}
+          fourth={"Le site"}
           fourthLink={"/site"}
         />
         <Link to="/reservations"><li className="action-li">Réservations</li></Link>
