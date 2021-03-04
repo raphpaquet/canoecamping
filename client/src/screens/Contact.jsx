@@ -5,6 +5,11 @@ import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import NavigationBG from '../components/NavigationBG';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import Footer from '../components/Footer';
+import { HashLink as Link } from 'react-router-hash-link';
+import MapContainer from '../components/Map';
 
 
 
@@ -83,8 +88,29 @@ export default function Contact() {
     <div id="contact">
       <NavigationBG />
       <div className="contact">
-        <h2 className="title">Contactez-nous</h2>
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <h2 className="title">Où nous trouver</h2>
+        <div className="map">
+          <div className="address">
+            <h3>Addresse: </h3>
+              <p>1111 rue de la Rivière Noire, <br></br>Pontiac, Quebec, H6fD4G</p>
+            <h4>Appelez-nous: </h4>
+              <p>514.555.5555</p>
+            <h4>Écrivez-nous: </h4>
+              <p>Directement du site</p>
+              <p>canoecamping@gmail.com</p>
+          </div>
+          <MapContainer />
+        </div>
+        <div className="follow">
+          <h2 className="title">Suivez nos aventures !</h2>
+          <div className="icon-social">
+            <InstagramIcon className="icon"/>
+            <FacebookIcon className="icon"/>
+          </div>
+          <img src="/images/instagram-photo.jpg" />
+        </div>
+        <form id="contact-form" onSubmit={handleSubmit}>
+          <h2 className="title">Contactez-nous</h2>
           <input id="name" className="form-input" type="text" name="name" placeholder='Votre Nom *' value={state.name} onChange={handleChange} required/>
           <br></br>
           <input id="email" className="form-input" type="email" name="email" placeholder='Votre Courriel *' value={state.email} onChange={handleChange} required/>
@@ -103,6 +129,7 @@ export default function Contact() {
           </div>
         </form>
       </div>
+        <Footer />
     </div>
   )
 }

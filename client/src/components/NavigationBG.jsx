@@ -19,6 +19,7 @@ export default function Navigation() {
           third={"Navette"} 
           thirdLink={"/navette"}
         />
+        <Link to="/reservations"><li className="action-li">Réservations</li></Link>
         <DropDownMenu 
           title={"À propos"} 
           first={"Notre Mission"} 
@@ -30,8 +31,7 @@ export default function Navigation() {
           fourth={"Le site"}
           fourthLink={"/site"}
         />
-        <Link to="/reservations"><li className="action-li">Réservations</li></Link>
-        <Link to="/contact"><li className="action-li">Nous contacter</li></Link>
+        <Link to="/contact"><li className="action-li">Contact</li></Link>
       </ul>
     </div>
   )

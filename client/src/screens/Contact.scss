@@ -9,36 +9,63 @@
   .contact {
     align-items: center;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     .title-button {
       float: right;
     }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      margin: 5rem 4rem; 
-      width: 30rem;
-      justify-content: center;
-      .form-input {
-        color: white;
-        background-color: transparent;
-        height: 3em;
-        outline: none;
-        font-size: 0.8em;
-        font-family: $font-title;
-        border-bottom: 1px 0 0 0 solid $primary-color;
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        border-radius: 0px;
-        .msg {
-          overflow: visible;
-          height: 4rem;
-          width:auto;
-        }
+  }
+  .map {
+    margin-top: 4rem;
+    display: flex;
+    .address {
+      font-family: $font-title;
+      color: $primary-color;
+      margin: 2rem 5rem;
+      p{
+        color: gray;
       }
     }
+    img {
+      width: 50rem;
+    }
   }
+  .follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    .icon {
+      color: $primary-color;
+      transform: scale(3);
+      margin: 2rem 3rem;
+    }
+  }
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 4rem; 
+  width: 30rem;
+  justify-content: center;
+  .form-input {
+    color: white;
+    background-color: transparent;
+    height: 3em;
+    outline: none;
+    font-size: 0.8em;
+    font-family: $font-title;
+    border-bottom: 1px 0 0 0 solid $primary-color;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    .msg {
+      overflow: visible;
+      height: 4rem;
+      width:auto;
+    }
+  }
+}
 }
 
 /* SEND BUTTON */

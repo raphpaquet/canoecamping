@@ -18,6 +18,7 @@ const history = createBrowserHistory();
 const tl = gsap.timeline({ defaults: { ease: 'power1.out' } })
 
   document.addEventListener("DOMContentLoaded", function(event){
+    tl.to('.intro', {visibility: "visible"})
     tl.to('.text', { y:'0%', duration: 1, stagger: 0.50 });
     tl.to('.slider', { y:"-100%", duration: 1.5, delay: 0.5 });
     tl.to('.intro', { y: "-100%", duration: 1 }, "-=1");
@@ -28,8 +29,9 @@ const tl = gsap.timeline({ defaults: { ease: 'power1.out' } })
 
 function App() {
   return (
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <div className="App">
+        <Switch>
         <Route path="/" exact>
           <main>
             <section class="landing">
@@ -40,7 +42,7 @@ function App() {
               <nav className="navbarApp">
                 <Navigation style={{background: "none"}} />
               </nav>
-              <Link to="/reservations"className="big-text"><button className="dispo-button">
+              <Link to="/reservations"><button className="dispo-button">
                 Voir nos disponibilités pour la saison 2021
                 </button></Link>
             </section>
@@ -60,7 +62,6 @@ function App() {
 
           </div>
           <div className="slider"></div>
-   
         </Route>
           <Route path="/mission" component={Mission} />
           <Route path="/canoe" component={Canoe} />
@@ -68,12 +69,13 @@ function App() {
           <Route path="/site" component={Site} />
           <Route path="/reservations" component={Reservations} /> 
           <Route path="/contact" component={Contact} />
+          </Switch>
         <footer>
           {/* <Footer /> */}
         </footer>
       </div>
 
-    </BrowserRouter>
+    </Router>
   );
 }
 

@@ -12,8 +12,7 @@ const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
     width: 'fit-content',
-   
- 
+    marginTop: '1rem',
   },
 })((props) => (
   <Menu
@@ -34,8 +33,8 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles((theme) => ({
   root: {
     fontFamily: "'Raleway', serif",
-    fontSize: "1.5rem",
-    '&:focus': {
+    fontSize: "2rem",
+    '&:active': {
       opacity: '0.6',
       fontWeight: 'bold',
       '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
@@ -48,7 +47,7 @@ export default function DropDownMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+      setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
@@ -58,17 +57,21 @@ export default function DropDownMenu(props) {
   return (
     <div>
       <Button className="action-li"
-        style={{fontSize:"1.5rem"}}
+        aria-owns={anchorEl ? "customized-menu" : undefined}
+        aria-haspopup="true"
+        style={{fontSize:"2rem"}}
         onClick={handleClick}
+        onMouseOver={handleClick}
       >
         {props.title}<KeyboardArrowDownIcon />
       </Button>
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
-        keepMounted
+        // keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        MenuListProps={{ onMouseLeave: handleClose }}
       >
             <StyledMenuItem>
               <Link to={props.firstLink}><li className="action-subli" style={{color: "black"}}>{props.first}</li></Link>

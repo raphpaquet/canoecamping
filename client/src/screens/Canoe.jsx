@@ -22,19 +22,32 @@ export default function Canoe() {
               <h3 className="activity-title" onClick={handleClick}>Canot & Canot/Camping<ArrowDown onClick={handleClick}/></h3>
             </div>
         </section>
-          <section className="activity-info" ref={activityRef}>
-            <p className="activity-text">
-            I'm baby gochujang kinfolk crucifix, yr butcher franzen before they sold out paleo wolf YOLO. Put a bird on it leggings hexagon, truffaut meditation vexillologist copper mug taiyaki. Actually tbh dreamcatcher woke
-            </p>
-            <p className="activity-text">
-            I'm baby gochujang kinfolk crucifix, yr butcher franzen before they sold out paleo wolf YOLO. Put a bird on it leggings hexagon, truffaut meditation vexillologist copper mug taiyaki. Actually tbh dreamcatcher woke
-            </p>
-            <p className="activity-text">
-            I'm baby gochujang kinfolk crucifix, yr butcher franzen before they sold out paleo wolf YOLO. Put a bird on it leggings hexagon, truffaut meditation vexillologist copper mug taiyaki. Actually tbh dreamcatcher woke
-            </p>
-            <p className="activity-text">
-            I'm baby gochujang kinfolk crucifix, yr butcher franzen before they sold out paleo wolf YOLO. Put a bird on it leggings hexagon, truffaut meditation vexillologist copper mug taiyaki. Actually tbh dreamcatcher woke
-            </p>
+        <section className="activity-info" ref={activityRef}>
+          <ul className="canot-choice-list">
+            <li>Choix 1</li>
+            <li>Choix 2</li>
+            <li>Choix 3</li>
+            <li>Choix 4</li>
+          </ul>
+            <h2 className="activity-summary">Aventure Canot-Camping 2 jours</h2>
+            <div className="activity-container">
+              <img className="tube-map" src="/images/map.png" />
+              <div className="activity-text-container">
+                <p className="activity-text">
+                Durée : 2 jours
+                </p>
+                <p className="activity-text">
+                Difficulté: débutant/intermédiaire
+                </p>
+                <p className="activity-text">
+                Prix : À partir de 50$/jour
+                </p>
+                <p className="activity-text">
+                Inclusions: Canot & Navette jusqu'au point de départ 
+                </p>
+              </div>
+            </div>
+            <button className="button reserve">Réserver</button>
           </section>
         </div>
       </div>
