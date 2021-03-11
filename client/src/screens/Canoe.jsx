@@ -2,6 +2,7 @@ import './Canoe.scss';
 import Navigation from '../components/Navigation';
 import ArrowDown from '../components/ArrowDown';
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -15,6 +16,10 @@ export default function Canoe() {
 
   return (
       <div id="activity">
+        <Helmet>
+          <meta name="description" content="page explicative pour aventure de canot et canot camping Outaouais"></meta>
+          <title>ARS canot</title>
+        </Helmet>
         <div className="activity">
         <section className="nav-image-canoe">
           <Navigation />

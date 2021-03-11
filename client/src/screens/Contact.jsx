@@ -96,8 +96,7 @@ export default function Contact() {
             <h4>Appelez-nous: </h4>
               <p>514.555.5555</p>
             <h4>Écrivez-nous: </h4>
-              <p>Directement du site</p>
-              <p>canoecamping@gmail.com</p>
+              <p><a href="mailto:paquetraphaelle@example.com">ars@gmail.com</a></p>
           </div>
           <MapContainer />
         </div>
@@ -109,7 +108,7 @@ export default function Contact() {
           </div>
           <img src="/images/instagram-photo.jpg" />
         </div>
-        <form id="contact-form" onSubmit={handleSubmit}>
+        {/* <form id="contact-form" onSubmit={handleSubmit}>
           <h2 className="title">Contactez-nous</h2>
           <input id="name" className="form-input" type="text" name="name" placeholder='Votre Nom *' value={state.name} onChange={handleChange} required/>
           <br></br>
@@ -127,7 +126,7 @@ export default function Contact() {
             {loading && <CircularProgress color="secondary" size={40} className={classes.buttonProgress} /> }
           </div>
           </div>
-        </form>
+        </form> */}
       </div>
         <Footer />
     </div>

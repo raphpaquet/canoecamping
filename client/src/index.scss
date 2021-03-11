@@ -93,6 +93,7 @@ p {
   margin-bottom: 2rem;
 }
 .button {
+  border: 0;
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
@@ -149,9 +150,6 @@ p {
   background-color: #fff;
   color: #a0a0a0;
   text-align: center;
-  .accent {
-    background-color: #f0f0f0;
-  }
 }
 .white-box {
   padding: 15px;
@@ -188,7 +186,7 @@ p {
   display: block;
   padding: 20px;
   margin: 20px auto;
-  width: 40%;
+  width: 10rem;
   height: auto;
   object-fit: fill;
   text-align: center;
@@ -220,13 +218,119 @@ p {
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
-/* SECTION RIVIERES */
-.tab-menu {
-  margin-bottom: 4rem;
-  text-align: center;
-}
-.tabs-wrapper {
-  text-align: center;
-  margin-top: 5rem;
+
+.white-box {
+  opacity: 1; 
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); 
+  transform-style: preserve-3d;
 }
 
+
+/* SECTION RIVIERES */
+.accent {
+  background: #ebebeb !important;
+}
+.tabs-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tabs-links {
+  color: rgb(104, 100, 100);
+  font-family: $font-text;
+  font-size: 1.5rem;
+  border: 0;
+  min-height: 0;
+  text-transform: uppercase;
+}
+.nav-link {
+  background-color: transparent;
+  color: #7a7a7e;
+}
+#tab-menu-tabpane {
+  background-color: green;
+}
+.nav-tabs {
+  margin-bottom: 3rem !important;
+  border: 0 !important;
+  .active {
+    background-color: white !important;
+    transition: background-color 300ms ease ;
+  }
+}
+.fullwidth-image {
+  width: 50rem;
+  height: auto;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+
+@media screen and (max-width: 991px) {
+  .grid-image {
+    width: 50%;
+    padding: 1.5rem
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button {
+    .full-width {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .tab {
+      font-size: 1.2rem;
+    }
+  }
+  .white-box {
+    margin-bottom: 3rem;
+  }
+  .grid-image {
+    width: 20%;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
+  .section {
+    padding: 2rem 4rem;
+  }
+  .section-title-group {
+    margin-top: 4rem;
+  }
+  .button {
+    margin-bottom: 2.5rem;
+  }
+  .grid-image {
+    width: 35%;
+  }
+  .row {
+    .col {
+      width: auto;
+    }
+    .col-4 {
+      flex: auto;
+      max-width: none;
+    }
+  }
+  .container {
+    padding: 8rem 1rem;
+  }
+  .fullwidth-image {
+    width: 30rem;
+    height: auto;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+}

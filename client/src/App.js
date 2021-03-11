@@ -1,5 +1,6 @@
 import './App.scss';
 import Footer from './components/Footer';
+import { useRef, useState } from 'react';
 import { Router, Route, Switch, BrowserRouter, Link } from "react-router-dom";
 import Activities from './screens/Canoe';
 import Mission from './screens/Mission';
@@ -14,6 +15,11 @@ import gsap from 'gsap';
 import Navette from './screens/Navette';
 import Activity from './components/Activity';
 import Rivieres from './components/Rivieres';
+import { Helmet } from 'react-helmet';
+import ArrowDown from './components/ArrowDown';
+import Burger from './components/Burger';
+import Menu from './components/Menu';
+import { useIntersection } from 'react-use';
 
 
 
@@ -32,9 +38,58 @@ const history = createBrowserHistory();
 
 
 function App() {
+
+  // Scroll down button arrow
+  const activitySectionRef = useRef();
+  const handleClick = () => {
+    activitySectionRef.current.scrollIntoView({ behavior: 'smooth' })
+   }
+
+  // Burger menu open/close
+  const [open, setOpen] = useState(false);
+
+  // Animation scroll down 
+  const sectionRef = useRef(null);
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: '0px', // 0 = bottom of the page
+    threshold: 0.5 // rep % (1 = 100%) = see 100% of the content when the ancester content is done
+  })
+
+  // fade in and fade out animation function 
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1, 
+      y: -60, 
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3
+      }
+    });
+  };
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0, 
+      y: -20, 
+      ease: "power4.out",
+    });
+  };
+
+  // checking to see when the viewport is visible to the user 
+  intersection && intersection.intersectionRatio < 0.9
+  // not reached 
+  ? fadeOut(".fadeIn")
+  // reached 
+  : fadeIn(".fadeIn")
+
   return (
     <Router history={history}>
       <div className="App">
+        <Helmet>
+          <meta name="description" content="site web de reservation pour aventures de canot et tube riviere outaouais"></meta>
+          <title>ARS canot homepage</title>
+        </Helmet>
         <Switch>
         <Route path="/" exact>
           <main>
@@ -44,16 +99,27 @@ function App() {
                   Sorry this video is unavailable
                 </video>
               <nav className="navbarApp">
-                <Navigation style={{background: "none"}} />
+                <Navigation className="nav-big-screen"/>
+                <div id="nav-small-screen">
+              <Link to="/"><img className="logo-small-screen" src="/images/logo.png" /></Link>
+                  <Burger open={open} setOpen={setOpen} />
+                  <Menu open={open} setOpen={setOpen}/>
+                </div>
               </nav>
                 <h2 className="hero-heading">Aventure Rivière Sauvage</h2>
-                <div className="hero-subheading">Agence d'aventures de canot camping en outaouais</div>
-              <Link to="/reservations"><button className="button">
+                <div className="hero-subheading">Agence d'aventures de canot camping de l'Outaouais</div>
+              <Link to="/reservations"><button className="button reserve">
                 Réserver pour la saison 2021
                 </button></Link>
+                <div className="arrow-app">
+                  <h5 onClick={handleClick}>Scroll Down</h5>
+                  <ArrowDown onClick={handleClick}/>
+                </div>
             </section>
           </main>
-          <Activity />
+          <div ref={activitySectionRef} >
+            <Activity />
+          </div>
           <Rivieres />
           <Footer />
           {/* <div className="intro">

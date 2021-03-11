@@ -10,14 +10,16 @@
     margin-right: auto;
     .row {
       display: flex;
-      margin-right: 5rem;
-      margin-left: 20rem;
+      justify-content: space-evenly;
       .col {
         min-height: 0.1rem;
         padding-left: 1rem;
         padding-right: 1rem;
         width: 33.33333%;
         text-align: left;
+        p {
+          color: darkgoldenrod;
+        }
         .col-3 {
           margin: 1rem;
         }
@@ -26,9 +28,9 @@
   }
   .center {
     border-top: 0.1rem solid #dbdbdb;
-    background-color: #383838;
+    background-color: #5a5a5a;
     text-align: center;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
   .footer-text {
     margin-top: 2rem;
@@ -52,12 +54,31 @@
     font-size: 1.4rem;
     font-weight: 300;
     text-decoration: none;
+    width: max-content;
+    min-width: 100%;
     &:hover {
       color: $color-contrast;
     }
     .with-icon {
       margin-left: 30px;
     }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer {
+    .container {
+      .row {
+        display: flex;
+        flex-direction: column;
+        .col {
+          flex: auto;
+          width: auto;
+          max-width: none;
+        }
+      }
+    }
+
   }
 
 }

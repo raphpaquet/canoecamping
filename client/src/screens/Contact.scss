@@ -35,6 +35,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 5rem;
+    margin-bottom: 10rem;
     .icon {
       color: $primary-color;
       transform: scale(3);
@@ -45,14 +46,14 @@
   display: flex;
   flex-direction: column;
   margin: 5rem 4rem; 
-  width: 30rem;
+  width: 40rem;
   justify-content: center;
   .form-input {
     color: white;
     background-color: transparent;
-    height: 3em;
+    height: 5em;
     outline: none;
-    font-size: 0.8em;
+    font-size: 1rem;
     font-family: $font-title;
     border-bottom: 1px 0 0 0 solid $primary-color;
     border-top: none;
@@ -61,7 +62,8 @@
     border-radius: 0px;
     .msg {
       overflow: visible;
-      height: 4rem;
+      height: 3rem;
+      font-size: 1.3rem;
       width:auto;
     }
   }
