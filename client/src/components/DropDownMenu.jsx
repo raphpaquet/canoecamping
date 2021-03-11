@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from './Navigation.scss';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -59,7 +58,7 @@ export default function DropDownMenu(props) {
       <Button className="action-li"
         aria-owns={anchorEl ? "customized-menu" : undefined}
         aria-haspopup="true"
-        style={{fontSize:"2rem"}}
+        style={{fontSize:"1.5rem", letterSpacing: "0.2rem"}}
         onClick={handleClick}
         onMouseOver={handleClick}
       >

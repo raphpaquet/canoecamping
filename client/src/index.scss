@@ -1,4 +1,5 @@
 @import './assets/variables';
+$color-contrast: rgb(247, 200, 72);
 
 html {
   box-sizing: border-box;
@@ -8,7 +9,8 @@ html {
 }
 body {
   background-color: white;
-  font: 1.6rem Helvetica;
+  font-size: 1.6rem ;
+  font-family: $font-text;
   height: 100%;
   margin: 0;
   width: 100% !important;
@@ -25,21 +27,206 @@ a {
   text-transform: uppercase;
   // text-shadow: 2px 2px rgb(0, 36, 0);
   font-weight: 500;
-  color: white;
+  color: black;
 }
 
+h1 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 300;
+  text-align: center;
+}
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #676770;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+}
+h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+h5 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: #676770;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+h6 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 300;
+}
+.fullwidth-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
 .button {
-  background-color: transparent;
-  padding: 1rem;
-  font-size: 1.6rem;
-  color: $primary-color;
-  border-radius: 20px;
-  box-shadow: 0px 3px 3px 0 rgb(197, 197, 197);
-  border: 1px solid $primary-color;
-  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px 20px 12px;
+  border-radius: 4px;
+  background-color: #edeff2;
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+  color: #49647b;
+  font-size: 10px;
+  line-height: 21px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
   outline: none;
   &:hover {
-    background-color: $primary-color;
-    color: white;
+    background-color: $color-contrast;
+    color: #404047
+  }
+  .w--current{
+    background-color: $color-contrast;
+  }
+  .full-width {
+    display: block;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .tab {
+    margin-right: 8px;
+    margin-left: 8px;
+    background-color: #ecf0f1;
+    &:hover {
+      background-color: $color-contrast;
+    }
+    .w--current {
+      background-color: #edeff2;
+      &:hover {
+        background-color: #f8c740;
+      }
+    }
   }
 }
+/* SECTION ACTIVITY */
+.section {
+  position: relative;
+  padding: 8rem 10rem;
+  background-color: #fff;
+  color: #a0a0a0;
+  text-align: center;
+  .accent {
+    background-color: #f0f0f0;
+  }
+}
+.white-box {
+  padding: 15px;
+  border: 1px solid #edeff2;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+.container {
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+.column {
+  height: 100%;
+}
+.row {
+  display: flex;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  .col {
+    min-height: 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 33.33333%;
+    text-align: left;
+    .col-3 {
+      margin: 1rem;
+    }
+  }
+}
+.grid-image {
+  display: block;
+  padding: 20px;
+  margin: 20px auto;
+  width: 40%;
+  height: auto;
+  object-fit: fill;
+  text-align: center;
+  background-color: $color-contrast;
+  border-radius: 30%;
+  border: 10px solid white;
+  box-shadow: 0px 0px 1px $color-contrast;
+}
+.section-title-group {
+  margin-bottom: 6rem;
+}
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+.centered {
+  color: #676770;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.section-subheading {
+  color: #8e8e9c;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+/* SECTION RIVIERES */
+.tab-menu {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.tabs-wrapper {
+  text-align: center;
+  margin-top: 5rem;
+}
+
