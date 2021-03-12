@@ -1,6 +1,6 @@
 import './Navigation.scss';
 import { Link } from 'react-router-dom';
-import DropDownMenu from '../components/DropDownMenu';
+import DropDownMenu from './DropDownMenu';
 
 
 
