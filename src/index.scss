@@ -17,9 +17,8 @@ body {
 }
 
 a {
-  text-decoration: none;
-  outline: none;
-  color: white;
+  text-decoration: none !important;
+  outline: none !important;
 }
 
 .title {
@@ -159,6 +158,9 @@ p {
   text-align: center;
   -o-object-fit: fill;
   object-fit: fill;
+  p {
+    color: rgb(160, 160, 160);
+  }
 }
 .container {
   -webkit-transition: opacity 200ms ease;
@@ -262,15 +264,23 @@ p {
 .fullwidth-image {
   width: 50rem;
   height: auto;
+  margin-right: 0;
 }
 
 .hidden {
   visibility: hidden;
   position: absolute;
 }
+.plus {
+  border: 1px solid gray;
+  margin-top: 2rem;
+}
 
 
 @media screen and (max-width: 991px) {
+  .section {
+    padding: 8rem 3rem;
+  }
   .grid-image {
     width: 50%;
     padding: 1.5rem
@@ -286,6 +296,24 @@ p {
     .tab {
       font-size: 1.2rem;
     }
+  }
+  .grid-image {
+    width: 35%;
+  }
+  .row {
+    .col {
+      width: auto;
+    }
+    .col-4 {
+      flex: auto;
+      max-width: none;
+      p {
+        padding: 0;
+      }
+    }
+  }
+  .container {
+    padding: 8rem 1rem;
   }
   .white-box {
     margin-bottom: 3rem;
@@ -312,18 +340,6 @@ p {
   }
   .grid-image {
     width: 35%;
-  }
-  .row {
-    .col {
-      width: auto;
-    }
-    .col-4 {
-      flex: auto;
-      max-width: none;
-    }
-  }
-  .container {
-    padding: 8rem 1rem;
   }
   .fullwidth-image {
     width: 30rem;

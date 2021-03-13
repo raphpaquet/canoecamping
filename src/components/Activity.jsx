@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Activity() {
   return (
     <div className="section">
@@ -8,25 +10,25 @@ export default function Activity() {
         </div>
         <div className="row">
           <div className="column col col-4">
-            <div className="white-box"><img src="./images/icon-canoe.png" alt="logo" width="70" class="grid-image"/>
+            <Link to="/canoe"><div className="white-box"><img src="./images/icon-canoe.png" alt="logo" width="70" class="grid-image"/>
               <h3>Canot</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#" className="button">Réserver</a>
-            </div>
+            </div></Link>
           </div>
           <div className="column col col-4">
-            <div className="white-box"><img src="./images/icon-tube.png" alt="logo" width="70" class="grid-image"/>
+            <Link to="/tube"><div className="white-box"><img src="./images/icon-tube.png" alt="logo" width="70" class="grid-image" />
               <h3>Tubes</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#" className="button">Réserver</a>
-            </div>
+            </div></Link>
           </div>
           <div className="column col col-4">
-            <div className="white-box"><img src="./images/icon-bus.png" alt="logo" width="70" class="grid-image"/>
+            <Link to="/navette"><div className="white-box"><img src="./images/icon-bus.png" alt="logo" width="70" class="grid-image"/>
               <h3>Navette</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#" className="button">Réserver</a>
-            </div>
+            </div></Link>
           </div>
         </div>
       </div>

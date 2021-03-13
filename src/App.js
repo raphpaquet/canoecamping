@@ -90,14 +90,6 @@ function App() {
           <meta name="description" content="site web de reservation pour aventures de canot et tube riviere outaouais"></meta>
           <title>ARS canot homepage</title>
         </Helmet>
-        <Switch>
-        <Route path="/" exact>
-          <main>
-            <section className="hero-section centered">
-                <video id="background-video" autoPlay loop muted type="video/mp4">
-                  <source src="canoe-video.mp4" />
-                  Sorry this video is unavailable
-                </video>
               <nav className="navbarApp">
                 <Navigation className="nav-big-screen"/>
                 <div id="nav-small-screen">
@@ -106,6 +98,14 @@ function App() {
                   <Menu open={open} setOpen={setOpen}/>
                 </div>
               </nav>
+        <Switch>
+        <Route path="/" exact>
+          <main>
+            <section className="hero-section centered">
+                <video id="background-video" autoPlay loop muted type="video/mp4">
+                  <source src="canoe-video.mp4" />
+                  Sorry this video is unavailable
+                </video>
                 <h2 className="hero-heading">Aventure Rivière Sauvage</h2>
                 <div className="hero-subheading">Agence d'aventures de canot camping de l'Outaouais</div>
               <Link to="/reservations"><button className="button reserve">
