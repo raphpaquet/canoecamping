@@ -1,12 +1,16 @@
 @import '../assets/variables.scss';
 
 #contact {
+  background: rgb(0, 43, 0);
+  position: absolute;
+  width: 100%;
   height: 100vh;
   .title {
     color: black;
     margin-top: 5rem;
   }
   .contact {
+    margin-top: 10rem;
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -41,33 +45,58 @@
       transform: scale(3);
       margin: 2rem 3rem;
     }
-  }
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  margin: 5rem 4rem; 
-  width: 40rem;
-  justify-content: center;
-  .form-input {
-    color: white;
-    background-color: transparent;
-    height: 5em;
-    outline: none;
-    font-size: 1rem;
-    font-family: $font-title;
-    border-bottom: 1px 0 0 0 solid $primary-color;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-radius: 0px;
-    .msg {
-      overflow: visible;
-      height: 3rem;
-      font-size: 1.3rem;
-      width:auto;
+    .ig-img {
+      max-width: 100vw;
+      width: 70rem;
     }
   }
-}
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 4rem; 
+    width: 40rem;
+    justify-content: center;
+    .form-input {
+      color: white;
+      background-color: transparent;
+      height: 5em;
+      outline: none;
+      font-size: 1rem;
+      font-family: $font-title;
+      border-bottom: 1px 0 0 0 solid $primary-color;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-radius: 0px;
+      .msg {
+        overflow: visible;
+        height: 3rem;
+        font-size: 1.3rem;
+        width:auto;
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .contact {
+      margin: 2rem;
+    }
+    .ig-img {
+        max-width: 100vw;
+        width: 100rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    #contact {
+      .map {
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+
+  }
 }
 
 /* SEND BUTTON */
@@ -98,5 +127,3 @@
 }
 
 
-@media (max-width: 480px) {
-}

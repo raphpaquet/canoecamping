@@ -96,7 +96,11 @@
 
 @media screen and (max-width: 991px) {
   #activity {
+    height: 100vh;
     .activity {
+      .nav-image-canoe {
+        min-height: 100vh;
+      }
       .img-text {
         margin-top: 100rem;
         margin-right: 3rem;
@@ -155,7 +159,7 @@
         margin-right: 0;
         margin-left: 2rem;
         .activity-title {
-          font-size: 3rem;
+          font-size: 4rem;
         }
       }
     }

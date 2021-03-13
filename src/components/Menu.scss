@@ -2,18 +2,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(255, 255, 254);
-  height: 100vh;
-  text-align: left;
+  background: rgb(0, 41, 0);
+  // opacity: 0.9;
+  height: 50%;
+  text-align: center;
   padding: 2rem;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   transition: transform 0.3s ease-in-out;
   z-index: 1;
   transform: translateY(-100%);
-  
-  
+  width: 100%;
   @media (max-width: 500px) {
     width: 100%;
   }
@@ -32,13 +32,11 @@
     color: rgb(252, 186, 88);
     text-decoration: none;
     transition: color 0.3s linear;
-    
     @media (max-width: 500px) {
       font-size: 2rem;
       font-weight: 300;
       text-align: center;
     }
-
     &:hover {
       color: darkgoldenrod;
     }
@@ -47,6 +45,3 @@
 .transform-open {
   transform: translateY(0);
 }
-// .transform-close {
-//   transform: translateY(-100%);
-// }

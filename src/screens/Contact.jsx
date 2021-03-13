@@ -86,7 +86,7 @@ export default function Contact() {
 
   return (
     <div id="contact">
-      <NavigationBG />
+      {/* <NavigationBG /> */}
       <div className="contact">
         <h2 className="title">Où nous trouver</h2>
         <div className="map">
@@ -106,7 +106,7 @@ export default function Contact() {
             <InstagramIcon className="icon"/>
             <FacebookIcon className="icon"/>
           </div>
-          <img src="/images/instagram-photo.jpg" />
+          <img src="/images/instagram-photo.jpg" className="ig-img" />
         </div>
         {/* <form id="contact-form" onSubmit={handleSubmit}>
           <h2 className="title">Contactez-nous</h2>

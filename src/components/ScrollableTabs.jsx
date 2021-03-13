@@ -51,6 +51,7 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    fontSize: "1.5rem",
     flexGrow: 1,
     alignItems: "center",
     width: '100%',
@@ -78,10 +79,10 @@ export default function ScrollableTabsButtonAuto() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="2 jours" {...a11yProps(0)} />
-          <Tab label="3 jours" {...a11yProps(1)} />
-          <Tab label="4 jours" {...a11yProps(2)} />
-          <Tab label="6 jours" {...a11yProps(3)} />
+          <Tab label="2 jours" {...a11yProps(0)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label="3 jours" {...a11yProps(1)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label="4 jours" {...a11yProps(2)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label="6 jours" {...a11yProps(3)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

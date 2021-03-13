@@ -53,11 +53,11 @@
       height: 6rem;
       margin: 1rem 2rem;
       float: left;
+      position: absolute;
       filter: invert(1);
     }
   }
   nav {
-    width: 100%;
     z-index: 1;
     .nav-links {
       display: flex;
@@ -80,12 +80,18 @@
 
 
   @media screen and (max-width: 991px) {
-    nav {
-      min-width: 100vw;
+    .App {
+      nav {
+        width: 110vw;
+        min-width: 110vw;
+      }
     }
     #nav-small-screen {
       visibility: visible;
       width: 100%;
+      .logo-small-screen {
+        position: relative;
+      }
     }
     .nav-big-screen {
       visibility: hidden;
@@ -162,7 +168,7 @@
       margin-top: 3rem;
     }
   }
-
+}
 
 
   // .landing {
@@ -231,7 +237,7 @@
   //     color: $primary-color;
   //   }
   // }
-}
+
 
 // @media screen and (max-width: 800px) {
 //   .App {
