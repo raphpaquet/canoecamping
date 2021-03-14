@@ -19,18 +19,23 @@ export default function Navigation() {
           third={"Navette"} 
           thirdLink={"/navette"}
         />
-        <Link to="/reservations"><li className="action-li">Réservations</li></Link>
+          <DropDownMenu 
+            title={"Les rivières"} 
+            first={"Rivière Noire"} 
+            firstLink={'/rivierenoire'} 
+            second={"Rivière Mauve"} 
+            secondLink={"/rivieremauve"}
+            third={"Rivière Orange"}
+            thirdLink={"/riviereorange"}
+          />
         <DropDownMenu 
           title={"À propos"} 
-          first={"Notre Mission"} 
-          firstLink={'/mission'} 
-          second={"La région"} 
-          secondLink={"/region"} 
-          third={"Sécurité"} 
-          thirdLink={"/securite"}
-          fourth={"le site"}
-          fourthLink={"/site"}
+          first={"L'entreprise"} 
+          firstLink={'/about'} 
+          second={"Sécurité"} 
+          secondLink={"/securite"}
         />
+        <Link to="/reservations"><li className="action-li">Réservations</li></Link>
         <Link to="/contact"><li className="action-li">Contact</li></Link>
       </ul>
     </div>

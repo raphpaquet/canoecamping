@@ -2,24 +2,27 @@ import './App.scss';
 import Footer from './components/Footer';
 import { useRef, useState } from 'react';
 import { Router, Route, Switch, BrowserRouter, Link } from "react-router-dom";
-import Activities from './screens/Canoe';
-import Mission from './screens/Mission';
-import Site from './screens/Site';
+import { useIntersection } from 'react-use';
+import { createBrowserHistory } from 'history';
+import gsap from 'gsap';
+import { Helmet } from 'react-helmet';
+import About from './screens/About';
 import Contact from './screens/Contact';
 import Reservations from './screens/Reservations';
-import Navigation from './components/Navigation';
-import { createBrowserHistory } from 'history';
 import Canoe from './screens/Canoe';
 import Tube from './screens/Tube';
-import gsap from 'gsap';
 import Navette from './screens/Navette';
+import Security from './screens/Security';
+import Politics from './screens/Politics';
+import RiviereMauve from './screens/RiviereMauve';
+import RiviereNoire from './screens/RiviereNoire';
+import RiviereOrange from './screens/RiviereOrange';
+import Navigation from './components/Navigation';
 import Activity from './components/Activity';
 import Rivieres from './components/Rivieres';
-import { Helmet } from 'react-helmet';
 import ArrowDown from './components/ArrowDown';
 import Burger from './components/Burger';
 import Menu from './components/Menu';
-import { useIntersection } from 'react-use';
 
 
 
@@ -90,16 +93,16 @@ function App() {
           <meta name="description" content="site web de reservation pour aventures de canot et tube riviere outaouais"></meta>
           <title>ARS canot homepage</title>
         </Helmet>
-              <nav className="navbarApp">
-                <Navigation className="nav-big-screen"/>
-                <div id="nav-small-screen">
-              <Link to="/"><img className="logo-small-screen" src="/images/logo.png" /></Link>
-                  <Burger open={open} setOpen={setOpen} />
-                  <Menu open={open} setOpen={setOpen}/>
-                </div>
-              </nav>
         <Switch>
         <Route path="/" exact>
+          <nav className="navbarApp">
+            <Navigation className="nav-big-screen"/>
+            <div id="nav-small-screen">
+          <Link to="/"><img className="logo-small-screen" src="/images/logo.png" /></Link>
+              <Burger open={open} setOpen={setOpen} />
+              <Menu open={open} setOpen={setOpen}/>
+            </div>
+          </nav>
           <main>
             <section className="hero-section centered">
                 <video id="background-video" autoPlay loop muted type="video/mp4">
@@ -138,13 +141,17 @@ function App() {
           </div>
           <div className="slider"></div> */}
         </Route>
-          <Route path="/mission" component={Mission} />
+          <Route path="/about" component={About} />
           <Route path="/canoe" component={Canoe} />
           <Route path="/tube" component={Tube} />
           <Route path="/navette" component={Navette} />
-          <Route path="/site" component={Site} />
+          <Route path="/rivierenoire" component={RiviereNoire} />
+          <Route path="/riviereorange" component={RiviereOrange} />
+          <Route path="/rivieremauve" component={RiviereMauve} />
           <Route path="/reservations" component={Reservations} /> 
           <Route path="/contact" component={Contact} />
+          <Route path="/securite" component={Security} />
+          <Route path="/politique" component={Politics} />
           </Switch>
       </div>
 

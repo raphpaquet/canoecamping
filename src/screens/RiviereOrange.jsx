@@ -1,17 +1,17 @@
-import './Reservations.scss';
+import Navigation from '../components/Navigation';
 import Burger from '../components/Burger';
 import { Link } from 'react-router-dom';
 import Menu from '../components/Menu';
 import { useState } from 'react';
-import Navigation from '../components/Navigation';
+import './Riviere.scss';
 
-export default function Reservations() {
+export default function RiviereOrange() {
 
-   // Burger menu open/close
-   const [open, setOpen] = useState(false);
+  // Burger menu open/close
+  const [open, setOpen] = useState(false);
 
   return (
-    <div id="reservation">
+    <div className="riviere-orange">
       <nav className="navbarApp color">
             <Navigation className="nav-big-screen"/>
             <div id="nav-small-screen">
@@ -20,7 +20,8 @@ export default function Reservations() {
               <Menu open={open} setOpen={setOpen}/>
             </div>
           </nav>
-      <h2 className="title">Réservations</h2>
+      <h1 className="title">La Rivière Orange</h1>
+      
     </div>
   )
 }

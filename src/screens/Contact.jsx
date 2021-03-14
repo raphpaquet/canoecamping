@@ -4,12 +4,15 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import NavigationBG from '../components/NavigationBG';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import Footer from '../components/Footer';
 import { HashLink as Link } from 'react-router-hash-link';
 import MapContainer from '../components/Map';
+import Navigation from '../components/Navigation';
+import Burger from '../components/Burger';
+import Menu from '../components/Menu';
+
 
 
 
@@ -31,6 +34,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Contact() {
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const classes = useStyles();
@@ -86,7 +90,14 @@ export default function Contact() {
 
   return (
     <div id="contact">
-      {/* <NavigationBG /> */}
+      <nav className="navbarApp color">
+        <Navigation className="nav-big-screen"/>
+        <div id="nav-small-screen">
+        <Link to="/"><img className="logo-small-screen" src="/images/logo.png" /></Link>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen}/>
+        </div>
+      </nav>
       <div className="contact">
         <h2 className="title">Où nous trouver</h2>
         <div className="map">
