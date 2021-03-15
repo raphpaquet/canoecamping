@@ -15,18 +15,18 @@ export default function Footer() {
         </div>
         <div className="col col-3">
           <h5>Liens pratiques</h5>
-          <a href="#" className="footer-link">Termes et conditions</a>
-          <a href="#" className="footer-link">Politique d'achats</a>
-          <a href="#" className="footer-link">Sécurité et responsabilités</a>
-          <a href="#" className="footer-link">Cartes des rivières</a>
+          <Link to="" className="footer-link">Termes et conditions</Link>
+          <Link to="" className="footer-link">Politique d'achats</Link>
+          <Link to="" className="footer-link">Sécurité et responsabilités</Link>
+          <Link to="" className="footer-link">Cartes des rivières</Link>
         </div>
         <div className="col col-3">
           <h5>Social</h5>
           <div className="footer-link-wrapper"><InstagramIcon className="info-icon" />
-            <a href="#" className="footer-link with-icon">Instagram</a>
+            <Link to="" className="footer-link with-icon">Instagram</Link>
           </div>
           <div className="footer-link-wrapper"><FacebookIcon className="info-icon" />
-            <a href="#" className="footer-link with-icon">Facebook</a>
+            <Link to="" className="footer-link with-icon">Facebook</Link>
           </div>
         </div>
       </div>

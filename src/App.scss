@@ -6,7 +6,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   overflow-x: hidden;
   #background-video {
     background-attachment: fixed;
@@ -46,24 +46,7 @@
       text-transform: uppercase;
     }
   }
-  .color {
-    // background-image: linear-gradient(45deg, #3e758a, #002d46);
-    background-color: rgb(4, 41, 4);
-    box-shadow: 1px 4px 6px #131a1d;
-    }
-  #nav-small-screen {
-    position: absolute;
-    visibility: hidden;
-    z-index: 1;
-    height: 15rem;
-    .logo-small-screen {
-      height: 6rem;
-      margin: 4rem 4rem;
-      float: left;
-      position: absolute;
-      filter: invert(1);
-    }
-  }
+
   nav {
     z-index: 1;
     .nav-links {
@@ -179,82 +162,5 @@
 }
 
 
-  // .landing {
-  //   min-height: 100vh;
-  //   width: 100%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   .big-text {
-  //     position:absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     font-size: 2rem;
-  //     font-family: $font-title;
-  //   }
-  // }
-  // .intro {
-  //   background: black;
-  //   visibility: hidden;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   .intro-text {
-  //     color: white;
-  //     font-family: $font-title;
-  //     font-size: 3rem;
-  //   }
-  // }
-  // .slider {
-  //   background: rgb(0, 39, 7);
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   transform: translateY(100%);
-  // }
-  // .hide {
-  //   background: black;
-  //   overflow: hidden;
-  //   span {
-  //     transform: translateY(100%);
-  //     display: inline-block;
-  //   }
-  // }
-  // .dispo-button {
-  //   align-self: center;
-  //   color: white;
-  //   text-shadow: 2px 1px $primary-color;
-  //   font-size: 2.5rem;
-  //   border: 1px white solid;
-  //   width: fit-content;
-  //   padding: 1.5rem;
-  //   background-color: transparent;
-  //   border-radius: 1rem;
-  //   margin-top: 20%;
-  //   cursor: pointer;
-  //   outline: none;
-  //   &:hover {
-  //     background-color: white;
-  //     color: $primary-color;
-  //   }
-  // }
 
-
-// @media screen and (max-width: 800px) {
-//   .App {
-//     overflow: scroll;
-//   }
-//   #background-video{
-//     width:100%;
-//     max-width:800px;
-//     height:auto;
-//   }
-// }
 

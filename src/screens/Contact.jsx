@@ -1,9 +1,5 @@
 import './Contact.scss';
-import React, { useState, useEffect, useRef } from 'react';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import axios from 'axios';
-import { makeStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import React, { useState } from 'react';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import Footer from '../components/Footer';
@@ -12,92 +8,33 @@ import MapContainer from '../components/Map';
 import Navigation from '../components/Navigation';
 import Burger from '../components/Burger';
 import Menu from '../components/Menu';
+import { Helmet } from 'react-helmet';
 
 
+export default function Contact(props) {
 
+   // Burger menu open/close
+   const [open, setOpen] = useState(false);
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    '& > * + *': {
-      marginLeft: theme.spacing(2),
+  let content = {
+    English: {
+      seoTitle: "River Tubing",
+      description: "inflated tubes location to do river floating in Outaouais"
     },
-  },
-
-  buttonProgress: {
-    color: '#fd9bab',
-    position: 'flex',
-    justifyContent: 'center',
-    alignItem:'center',
-    marginTop: '1em',
+    French: {
+      seoTitle: "Descente de rivière sur tube",
+      description: "Location de tubes gonflables pour faire une descente de rivière"
+    }
   }
-}));
-
-export default function Contact() {
-  const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const classes = useStyles();
-  const timer = useRef()
-  const [state, setState] = useState(
-    {
-    email: '',
-    name: '', 
-    subject: '', 
-    message: ''
-  });
-
-  const handleChange = e => {
-    const {name, value} = e.target
-    setState(prev => ({...prev, [name]: value }))
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    setLoading(true)
-    setSuccess(false)
-    //destructure from state 
-    const {email, name, subject, message} = state
-    axios.post('/sendtome', {
-      //make an object to be handled from req.body on the backend. 
-      email,
-      name,
-      subject,
-      text: message
-    })
-    .then((response) => {
-      setLoading(false)
-      setSuccess(true)
-      if(response.status === 200) {
-        alert('Merci pour votre courriel. Je vous réponds le plus tôt possible');
-        clearState()
-      } else {
-        alert("Oups! Le message n'envoie pas, réessayez ou contactez moi via facebook ou instagram !")
-      }
-    })
-    clearState()
-  };
-
-  const clearState = () => {
-    setState({
-      email: '',
-      name: '', 
-      subject: '', 
-      message: ''
-    })
-  }
-
+ 
+  props.language === "English" ? (content = content.English) : (content = content.French);
 
   return (
     <div id="contact">
-      <nav className="navbarApp color">
-        <Navigation className="nav-big-screen"/>
-        <div id="nav-small-screen">
-        <Link to="/"><img className="logo-small-screen" src="/images/logo.png" /></Link>
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen}/>
-        </div>
-      </nav>
+      <Helmet>
+          <meta name="description" content={content.description}></meta>
+          <title>{content.seoTitle}</title>
+        </Helmet>
       <div className="contact">
         <h2 className="title">Où nous trouver</h2>
         <div className="map">
@@ -117,27 +54,8 @@ export default function Contact() {
             <InstagramIcon className="icon"/>
             <FacebookIcon className="icon"/>
           </div>
-          <img src="/images/instagram-photo.jpg" className="ig-img" />
+          <img src="/images/instagram-photo.jpg" className="ig-img" alt="apercu d'un profil instagram"/>
         </div>
-        {/* <form id="contact-form" onSubmit={handleSubmit}>
-          <h2 className="title">Contactez-nous</h2>
-          <input id="name" className="form-input" type="text" name="name" placeholder='Votre Nom *' value={state.name} onChange={handleChange} required/>
-          <br></br>
-          <input id="email" className="form-input" type="email" name="email" placeholder='Votre Courriel *' value={state.email} onChange={handleChange} required/>
-          <br></br>
-          <input id="subject" className="form-input" type="text" name="subject" placeholder='Objet' value={state.subject} onChange={handleChange}/>
-          <br></br>
-          <TextareaAutosize aria-label="empty textarea" id="message" className="form-input msg" name="message" placeholder='Message *' value={state.message} onChange={handleChange} required/>
-          <br></br>
-          <div class="box-1">
-            <button class="btn" type="submit" variant="contained" disabled={loading} >
-              <span>ENVOYER</span>
-          </button>
-          <div className="progress">
-            {loading && <CircularProgress color="secondary" size={40} className={classes.buttonProgress} /> }
-          </div>
-          </div>
-        </form> */}
       </div>
         <Footer />
     </div>

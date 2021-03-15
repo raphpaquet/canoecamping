@@ -1,24 +1,17 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import '../screens/Canoe.scss'
+import parse from "html-react-parser";
+import '../screens/Canoe.scss';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-// Or Create your Own theme:
-const theme = createMuiTheme({
-  palette: {
-    secondary: {
-      main: '#FFF'
-    }
-  }
-});
+
   return (
     <div
       role="tabpanel"
@@ -59,7 +52,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ScrollableTabsButtonAuto() {
+export default function ScrollableTabsButtonAuto(props) {
+
+  let content = {
+    English: {
+      labelFirst: "2 days",
+      titleFirst: "Canoe Camping 2 days adventure",
+      activityDescriptionFirst: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
+      labelSecond: "3 days",
+      titleSecond: "Canoe Camping 3 days adventure",
+      activityDescriptionSecond: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
+      labelThird: "4 days",
+      titleThird: "Canoe Camping 4 days adventure",
+      activityDescriptionthird: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
+      labelFourth: "6 days",
+      titleFourth: "Canoe Camping 6 days adventure",
+      activityDescriptionFourth: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
+      reserve: "Book online"
+     },
+    French: {
+      labelFirst: "2 jours",
+      titleFirst: "Aventure de Canot Camping 2 jours",
+      activityDescriptionFirst: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
+      labelSecond: "3 jours",
+      titleSecond: "Aventure de Canot Camping 3 jours",
+      activityDescriptionSecond: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
+      labelThird: "4 jours",
+      titleThird: "Aventure de Canot Camping 4 jours",
+      activityDescriptionthird: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
+      labelFourth: "6 jours",
+      titleFourth: "Aventure de Canot Camping 6 jours",
+      activityDescriptionFourth: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
+      reserve: "Réserver"
+     }
+  }
+
+  props.language === "English" ? (content = content.English) : (content = content.French);
+  
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
@@ -79,95 +116,51 @@ export default function ScrollableTabsButtonAuto() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="2 jours" {...a11yProps(0)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
-          <Tab label="3 jours" {...a11yProps(1)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
-          <Tab label="4 jours" {...a11yProps(2)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
-          <Tab label="6 jours" {...a11yProps(3)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label={content.labelFirst} {...a11yProps(0)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label={content.labelSecond}{...a11yProps(1)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label={content.labelThird}{...a11yProps(2)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
+          <Tab label={content.labelFourth} {...a11yProps(3)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <h2 className="activity-summary">Aventure Canot-Camping 2 jours</h2>
+        <h2 className="activity-summary">{content.titleFirst}</h2>
         <div className="activity-container">
-          <img className="activity-img" src="/images/map.png" />
+          <img className="activity-img" src="/images/map.png" alt="" />
           <div className="activity-text-container">
-            <p className="activity-text">
-              Durée : 2 jours
-            </p>
-            <p className="activity-text">
-              Difficulté: débutant/intermédiaire
-            </p>
-            <p className="activity-text">
-              Prix : À partir de 50$/jour
-            </p>
-            <p className="activity-text">
-              Inclusions: Canot & Navette jusqu'au point de départ 
-            </p>
+            {parse(content.activityDescriptionFirst)}
               </div>
-            <button className="button reserve">Réserver</button>
+            <button className="button reserve">{content.reserve}</button>
           </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <h2 className="activity-summary">Aventure Canot-Camping 3 jours</h2>
+      <h2 className="activity-summary">{content.titleSecond}</h2>
         <div className="activity-container">
-          <img className="activity-img" src="/images/map.png" />
+          <img className="activity-img" src="/images/map.png" alt="" />
           <div className="activity-text-container">
-            <p className="activity-text">
-              Durée : 3 jours
-            </p>
-            <p className="activity-text">
-              Difficulté: débutant/intermédiaire
-            </p>
-            <p className="activity-text">
-              Prix : À partir de 50$/jour
-            </p>
-            <p className="activity-text">
-              Inclusions: Canot & Navette jusqu'au point de départ 
-            </p>
-          </div>
-           <button className="button reserve">Réserver</button>
+            {parse(content.activityDescriptionSecond)}
+              </div>
+            <button className="button reserve">{content.reserve}</button>
           </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <h2 className="activity-summary">Aventure Canot-Camping 4 jours</h2>
+      <h2 className="activity-summary">{content.titleThird}</h2>
         <div className="activity-container">
-          <img className="activity-img" src="/images/map.png" style={{width:"50rem"}}/>
+          <img className="activity-img" src="/images/map.png" alt="" />
           <div className="activity-text-container">
-            <p className="activity-text">
-              Durée : 4 jours
-            </p>
-            <p className="activity-text">
-              Difficulté: débutant/intermédiaire
-            </p>
-            <p className="activity-text">
-              Prix : À partir de 50$/jour
-            </p>
-            <p className="activity-text">
-              Inclusions: Canot & Navette jusqu'au point de départ 
-            </p>
+            {parse(content.activityDescriptionthird)}
               </div>
-            <button className="button reserve">Réserver</button>
+            <button className="button reserve">{content.reserve}</button>
           </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <h2 className="activity-summary">Aventure Canot-Camping 6 jours</h2>
+      <h2 className="activity-summary">{content.titleFourth}</h2>
         <div className="activity-container">
-          <img className="activity-img" src="/images/map.png" />
+          <img className="activity-img" src="/images/map.png" alt="" />
           <div className="activity-text-container">
-            <p className="activity-text">
-              Durée : 6 jours
-            </p>
-            <p className="activity-text">
-              Difficulté: débutant/intermédiaire
-            </p>
-            <p className="activity-text">
-              Prix : À partir de 50$/jour
-            </p>
-            <p className="activity-text">
-              Inclusions: Canot & Navette jusqu'au point de départ 
-            </p>
+            {parse(content.activityDescriptionFourth)}
+              </div>
+            <button className="button reserve">{content.reserve}</button>
           </div>
-          <button className="button reserve">Réserver</button>
-        </div>
       </TabPanel>
     </div>
   );

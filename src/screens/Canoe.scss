@@ -1,7 +1,7 @@
 @import '../assets/variables';
 
 #activity {
-  position: absolute;
+  // position: absolute;
   min-width: 100vw;
   .activity {
       display: flex;
@@ -24,6 +24,7 @@
         background-size: cover;
         height: 100vh;
         width: 100%;
+        background-position: 50%;
       }
     .img-text {
       text-align: center;
@@ -70,6 +71,7 @@
           width: 50rem;
         }
         .activity-text-container {
+          text-align: left;
           margin-left: 2rem;
           .activity-text {
             color: black;

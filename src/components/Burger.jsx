@@ -7,10 +7,8 @@ export default function Burger({ open, setOpen }) {
   const openMenu = () => {
     if (!open) {
       document.querySelector('.style-menu').classList.add('transform-open');
-      // document.querySelector('div').classList.add('burger-line');
-    } else {
-      // document.querySelector('div').classList.remove('burger-line');
-      document.querySelector('.style-menu').classList.remove('transform-open');
+    } else if(open) {
+      document.querySelector('.style-menu').classList.add('transform-close');
     }
   }
   return (

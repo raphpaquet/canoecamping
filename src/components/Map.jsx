@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
 import {
   GoogleMap,
   LoadScript,
   Marker,
   Circle,
-  InfoWindow
 } from '@react-google-maps/api';
-
-
-
-
 
 export default function MapContainer (props) {
 
-  // for infoWindow 
-  const [selected, setSelected] = useState({});
-  const onSelect = store => {
-    setSelected(store);
-  }
+
 
   const mapStyles = {
     height: "50vh",
     width: "50vw",
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginTop: "5rem",
+    marginBottom: "5rem"
   };
 
   const mapTheme = [
