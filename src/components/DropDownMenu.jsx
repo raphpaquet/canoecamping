@@ -11,6 +11,7 @@ const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
     width: 'fit-content',
+    height: 'fit-content',
     marginTop: '1rem',
   },
 })((props) => (
@@ -32,7 +33,7 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles((theme) => ({
   root: {
     fontFamily: "'Raleway', serif",
-    fontSize: "2rem",
+    fontSize: "1.5rem",
     '&:active': {
       opacity: '0.6',
       fontWeight: 'bold',

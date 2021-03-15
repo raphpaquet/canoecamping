@@ -28,7 +28,7 @@ export default function Canoe() {
           <title>ARS canot</title>
         </Helmet>
         <div className="activity">
-        <nav className="navbarApp absolute">
+        <nav className="navbarApp absolute" style={{width:"100%"}}>
             <Navigation className="nav-big-screen"/>
             <div id="nav-small-screen">
           <Link to="/"><img className="logo-small-screen" src="/images/logo.png" /></Link>

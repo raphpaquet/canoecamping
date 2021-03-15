@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Menu from '../components/Menu';
 import { useState } from 'react';
 import './Riviere.scss';
+import MapContainer from '../components/Map';
 
 export default function RiviereNoire() {
 
@@ -21,6 +22,7 @@ export default function RiviereNoire() {
             </div>
           </nav>
       <h1 className="title">La Rivière Noire</h1>
+      <MapContainer style={{width:"100%"}}/>
       
     </div>
   )
