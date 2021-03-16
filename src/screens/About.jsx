@@ -1,5 +1,4 @@
-import Footer from '../components/Footer'
-import './About.scss'
+import './About.scss';
 import { Helmet } from 'react-helmet';
 
 export default function About(props) {

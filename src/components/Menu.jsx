@@ -1,6 +1,5 @@
 import './Menu.scss';
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
 import DropDownMenu from './DropDownMenu';
 
 export default function Menu({ open, ref }) {

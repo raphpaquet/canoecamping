@@ -2,6 +2,7 @@ import './Riviere.scss';
 import { Helmet } from 'react-helmet';
 import MapContainer from '../components/Map';
 
+
 export default function RiviereNoire(props) {
 
   let content = {
@@ -18,6 +19,8 @@ export default function RiviereNoire(props) {
   }
  
   props.language === "English" ? (content = content.English) : (content = content.French);
+
+
 
 
   return (

@@ -1,20 +1,12 @@
 import './Contact.scss';
-import React, { useState } from 'react';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import Footer from '../components/Footer';
-import { HashLink as Link } from 'react-router-hash-link';
 import MapContainer from '../components/Map';
-import Navigation from '../components/Navigation';
-import Burger from '../components/Burger';
-import Menu from '../components/Menu';
 import { Helmet } from 'react-helmet';
 
 
 export default function Contact(props) {
 
-   // Burger menu open/close
-   const [open, setOpen] = useState(false);
 
   let content = {
     English: {
@@ -57,7 +49,6 @@ export default function Contact(props) {
           <img src="/images/instagram-photo.jpg" className="ig-img" alt="apercu d'un profil instagram"/>
         </div>
       </div>
-        <Footer />
     </div>
   )
 }

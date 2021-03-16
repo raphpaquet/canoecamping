@@ -8,7 +8,7 @@ export default function Activity(props) {
       subtitle: "Fun for everyone !",
       canoe: "Canoe",
       canoeDescription: "",
-      reserve: "Reserve",
+      reserve: "Book online",
       tube: "Tubing",
       tubeDescription: "",
       bus: "Shuttle",

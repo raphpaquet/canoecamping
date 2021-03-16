@@ -1,5 +1,4 @@
 import './Canoe.scss';
-import { useState } from 'react';
 import ArrowDown from '../components/ArrowDown';
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet';
@@ -9,8 +8,6 @@ import parse from 'html-react-parser';
 
 export default function Canoe(props) {
 
-  // Burger menu open/close
-  const [open, setOpen] = useState(false);
 
  const activityRef = useRef();
 

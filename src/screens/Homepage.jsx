@@ -1,14 +1,10 @@
 import '../App.scss';
-import { useRef, useState } from 'react';
-import { Router, Route, Switch, Link } from "react-router-dom";
-import { createBrowserHistory } from 'history';
-import { Helmet } from 'react-helmet';
-import Activity from '../components/Activity';
-import Rivieres from '../components/Rivieres';
+import { useRef } from 'react';
+import { Link } from "react-router-dom";
 import ArrowDown from '../components/ArrowDown';
 
 
-export default function HomePage(props) {
+export default function Homepage(props) {
     // Scroll down button arrow
     const activitySectionRef = useRef();
     const handleClick = () => {
@@ -53,6 +49,7 @@ return (
           </div>
         </section>
       </main>
+      <div ref={activitySectionRef}></div>
     </div>
 
   )

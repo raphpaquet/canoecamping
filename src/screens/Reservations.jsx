@@ -1,9 +1,4 @@
 import './Reservations.scss';
-import Burger from '../components/Burger';
-import { Link } from 'react-router-dom';
-import Menu from '../components/Menu';
-import { useState } from 'react';
-import Navigation from '../components/Navigation';
 import { Helmet } from 'react-helmet';
 
 export default function Reservations(props) {

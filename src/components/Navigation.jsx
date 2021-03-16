@@ -12,15 +12,24 @@ export default function Navigation(props) {
 
     // Burger menu open/close
     const [open, setOpen] = useState(false);
+    const [navPosition, setNavPosition] = useState('relative')
+    const [bgColor, setBgColor] = useState('transparent');
+    
+    const changeState = (color, pos) => {
+      setBgColor(color);
+      setNavPosition(pos)
+    }
 
   return (
-    <div className="navigation-bar">
+
+    <div className="navigation-bar" style={{ background: bgColor, position: navPosition}}>
     <div className="nav-big-screen">
       <div className="logo-container">
-        <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
+        <Link to="/" onClick={() => changeState('transparent', 'relative')}><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
       </div>
         <ul className="list-action">
           <DropDownMenu 
+            onClick={() => changeState('transparent', 'absolute')}
             title={"Les Activités"} 
             first={"Canot"} 
             firstLink={'/canoe'} 
@@ -30,6 +39,8 @@ export default function Navigation(props) {
             thirdLink={"/navette"}
           />
             <DropDownMenu 
+              onClick={() => changeState('black','relative')}
+              bgColor={'black'}
               title={"Les rivières"} 
               first={"Rivière Noire"} 
               firstLink={'/rivierenoire'} 
@@ -39,14 +50,15 @@ export default function Navigation(props) {
               thirdLink={"/riviereorange"}
             />
           <DropDownMenu 
+            onClick={() => changeState('black', 'relative')}
             title={"À propos"} 
             first={"L'entreprise"} 
             firstLink={'/about'} 
             second={"Sécurité"} 
             secondLink={"/securite"}
           />
-          <Link to="/reservations"><li className="action-li">Réservations</li></Link>
-          <Link to="/contact"><li className="action-li">Contact</li></Link>
+          <Link to="/reservations"><li className="action-li" onClick={() => changeState('black', 'relative')}>Réservations</li></Link>
+          <Link to="/contact"  onClick={() => changeState('black', 'relative')} ><li className="action-li">Contact</li></Link>
           <div className="language-select">
               <select 
                 className="custom-select"

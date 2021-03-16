@@ -68,22 +68,21 @@ export default function DropDownMenu(props) {
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
-        // keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
         MenuListProps={{ onMouseLeave: handleClose }}
       >
             <StyledMenuItem>
-              <Link to={props.firstLink}><li className="action-subli" style={{color: "black"}}>{props.first}</li></Link>
+              <Link to={props.firstLink} onClick={props.onClick}><li className="action-subli" >{props.first}</li></Link>
             </StyledMenuItem>
             <StyledMenuItem>
-                <Link to={props.secondLink}><li className="action-subli" style={{color: "black"}}>{props.second}</li></Link>
+                <Link to={props.secondLink} onClick={props.onClick}><li className="action-subli" >{props.second}</li></Link>
             </StyledMenuItem>
             <StyledMenuItem>
-                <Link to={props.thirdLink}><li className="action-subli" style={{color: "black"}}>{props.third}</li></Link>
+                <Link to={props.thirdLink} onClick={props.onClick}><li className="action-subli" >{props.third}</li></Link>
             </StyledMenuItem>
             <StyledMenuItem>
-                <Link to={props.fourthLink}><li className="action-subli" style={{color: "black"}}>{props.fourth}</li></Link>
+                <Link to={props.fourthLink} onClick={props.onClick}><li className="action-subli" >{props.fourth}</li></Link>
             </StyledMenuItem>
           </StyledMenu>
     </div>

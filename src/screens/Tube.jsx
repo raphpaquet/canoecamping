@@ -1,5 +1,5 @@
 import './Canoe.scss';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import ArrowDown from '../components/ArrowDown';
 import parse from 'html-react-parser';
@@ -9,8 +9,6 @@ import parse from 'html-react-parser';
 
 export default function Tube(props) {
 
-  // Burger menu open/close
-  const [open, setOpen] = useState(false);
 
  const activityRef = useRef();
 
