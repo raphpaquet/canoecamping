@@ -20,6 +20,39 @@ export default function Navigation(props) {
       setNavPosition(pos)
     }
 
+    let content = {
+      English: {
+        titleActivity: "Activities",
+        firstActivity: "Canoe",
+        secondActivity: "Tubing",
+        thirdActivity: "Shuttle",
+        titleRiver: "The Rivers",
+        firstRiver: "Black River",
+        secondRiver: "Purple River",
+        thirdRiver: "Orange River",
+        firstAbout: "The Company",
+        titleAbout: "About",
+        secondAbout: "Security",
+        booking: "Booking"
+      },
+      French: {
+        titleActivity: "Les activités",
+        firstActivity: "Canot",
+        secondActivity: "Tube",
+        thirdActivity: "Navette",
+        titleRiver: "Les Rivières",
+        firstRiver: "Rivière Noire",
+        secondRiver: "Rivière Mauve",
+        thirdRiver: "Rivière Orange",
+        firstAbout: "L'entreprise",
+        titleAbout: "À propos",
+        secondAbout: "Sécurité",
+        booking: "Réservations"
+      }
+    }
+   
+    props.language === "English" ? (content = content.English) : (content = content.French);
+
   return (
 
     <div className="navigation-bar" style={{ background: bgColor, position: navPosition}}>
@@ -30,34 +63,34 @@ export default function Navigation(props) {
         <ul className="list-action">
           <DropDownMenu 
             onClick={() => changeState('transparent', 'absolute')}
-            title={"Les Activités"} 
-            first={"Canot"} 
+            title={content.titleActivity}
+            first={content.firstActivity} 
             firstLink={'/canoe'} 
-            second={"Tubes"} 
+            second={content.secondActivity} 
             secondLink={"/tube"} 
-            third={"Navette"} 
+            third={content.thirdActivity} 
             thirdLink={"/navette"}
           />
             <DropDownMenu 
               onClick={() => changeState('black','relative')}
               bgColor={'black'}
-              title={"Les rivières"} 
-              first={"Rivière Noire"} 
+              title={content.titleRiver} 
+              first={content.firstRiver} 
               firstLink={'/rivierenoire'} 
-              second={"Rivière Mauve"} 
+              second={content.secondRiver} 
               secondLink={"/rivieremauve"}
-              third={"Rivière Orange"}
+              third={content.thirdRiver}
               thirdLink={"/riviereorange"}
             />
           <DropDownMenu 
             onClick={() => changeState('black', 'relative')}
-            title={"À propos"} 
-            first={"L'entreprise"} 
+            title={content.titleAbout} 
+            first={content.firstAbout} 
             firstLink={'/about'} 
-            second={"Sécurité"} 
+            second={content.secondAbout} 
             secondLink={"/securite"}
           />
-          <Link to="/reservations"><li className="action-li" onClick={() => changeState('black', 'relative')}>Réservations</li></Link>
+          <Link to="/reservations"><li className="action-li" onClick={() => changeState('black', 'relative')}>{content.booking}</li></Link>
           <Link to="/contact"  onClick={() => changeState('black', 'relative')} ><li className="action-li">Contact</li></Link>
           <div className="language-select">
               <select 
