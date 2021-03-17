@@ -1,24 +1,39 @@
 import './App.scss';
+import React from 'react';
 import Footer from './components/Footer';
 import { useRef, useState } from 'react';
 import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import { Helmet } from 'react-helmet';
-import About from './screens/About';
-import Contact from './screens/Contact';
-import Reservations from './screens/Reservations';
-import Canoe from './screens/Canoe';
-import Tube from './screens/Tube';
-import Navette from './screens/Navette';
-import Security from './screens/Security';
-import Politics from './screens/Politics';
-import RiviereMauve from './screens/RiviereMauve';
-import RiviereNoire from './screens/RiviereNoire';
-import RiviereOrange from './screens/RiviereOrange';
-import Activity from './components/Activity';
-import Rivieres from './components/Rivieres';
-import Navigation from './components/Navigation';
-import Homepage from './screens/Homepage';
+// import About from './screens/About';
+// import Contact from './screens/Contact';
+// import Reservations from './screens/Reservations';
+// import Canoe from './screens/Canoe';
+// import Tube from './screens/Tube';
+// import Navette from './screens/Navette';
+// import Security from './screens/Security';
+// import Politics from './screens/Politics';
+// import RiviereMauve from './screens/RiviereMauve';
+// import RiviereNoire from './screens/RiviereNoire';
+// import RiviereOrange from './screens/RiviereOrange';
+const Activity = React.lazy(() => import('./components/Activity'));
+const Rivieres = React.lazy(() => import('./components/Rivieres'));
+const Navigation = React.lazy(() => import('./components/Navigation'));
+const Homepage = React.lazy(() => import( './screens/Homepage'));
+const About = React.lazy(() => import('./screens/About'));
+const Contact = React.lazy(() => import('./screens/Contact'));
+const Reservations = React.lazy(() => import('./screens/Reservations'));
+const Canoe = React.lazy(() => import('./screens/Canoe'));
+const Tube = React.lazy(() => import('./screens/Tube'));
+const Navette = React.lazy(() => import('./screens/Navette'));
+const Security = React.lazy(() => import('./screens/Security'));
+const Politics = React.lazy(() => import('./screens/Politics'));
+const RiviereMauve = React.lazy(() => import('./screens/RiviereMauve'));
+const RiviereNoire = React.lazy(() => import('./screens/RiviereNoire'));
+const RiviereOrange = React.lazy(() => import('./screens/RiviereOrange'));
+
+
+
 
 
 const history = createBrowserHistory();
@@ -62,6 +77,7 @@ function App(props) {
 
   return (
     <Router history={history} language={language}>
+      <React.Suspense fallback={<p>...Loading</p>}>
       <div className="App">
         <Helmet>
           <meta name="description" content={content.description}></meta>
@@ -116,6 +132,7 @@ function App(props) {
           </Switch>
         <Footer />
       </div>
+      </React.Suspense>
 
     </Router>
   );
