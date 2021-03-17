@@ -5,6 +5,8 @@ import { useRef, useState } from 'react';
 import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import { Helmet } from 'react-helmet';
+import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 // import About from './screens/About';
 // import Contact from './screens/Contact';
 // import Reservations from './screens/Reservations';
@@ -16,10 +18,10 @@ import { Helmet } from 'react-helmet';
 // import RiviereMauve from './screens/RiviereMauve';
 // import RiviereNoire from './screens/RiviereNoire';
 // import RiviereOrange from './screens/RiviereOrange';
-const Activity = React.lazy(() => import('./components/Activity'));
-const Rivieres = React.lazy(() => import('./components/Rivieres'));
-const Navigation = React.lazy(() => import('./components/Navigation'));
-const Homepage = React.lazy(() => import( './screens/Homepage'));
+import Activity from './components/Activity';
+import Rivieres from './components/Rivieres';
+import Navigation from './components/Navigation';
+import Homepage from  './screens/Homepage';
 const About = React.lazy(() => import('./screens/About'));
 const Contact = React.lazy(() => import('./screens/Contact'));
 const Reservations = React.lazy(() => import('./screens/Reservations'));
@@ -32,6 +34,9 @@ const RiviereMauve = React.lazy(() => import('./screens/RiviereMauve'));
 const RiviereNoire = React.lazy(() => import('./screens/RiviereNoire'));
 const RiviereOrange = React.lazy(() => import('./screens/RiviereOrange'));
 
+// after calling LogRocket.init()
+setupLogRocketReact(LogRocket);
+LogRocket.init('ylqmcd/ars');
 
 
 
@@ -77,7 +82,6 @@ function App(props) {
 
   return (
     <Router history={history} language={language}>
-      <React.Suspense fallback={<p>...Loading</p>}>
       <div className="App">
         <Helmet>
           <meta name="description" content={content.description}></meta>
@@ -103,6 +107,7 @@ function App(props) {
               </div>
               <Rivieres language={language}/>
             </Route>
+          <React.Suspense fallback={<p>...Loading</p>}>
             <Route path="/canoe">
               <Canoe language={language}/> 
             </Route>
@@ -129,10 +134,10 @@ function App(props) {
             <Route path="/contact" component={Contact} language={language}/>
             <Route path="/securite" component={Security} language={language}/>
             <Route path="/politique" component={Politics} language={language} />
+      </React.Suspense>
           </Switch>
         <Footer />
       </div>
-      </React.Suspense>
 
     </Router>
   );
