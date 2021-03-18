@@ -108,7 +108,7 @@ export default function Navigation(props) {
         <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
       </div>
         <Burger open={open} setOpen={setOpen}/>
-        <Menu open={open} setOpen={setOpen}  ref={props.ref}/>
+        <Menu open={open} setOpen={setOpen} />
       </div>
     </div>
   )

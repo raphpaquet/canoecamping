@@ -4,10 +4,10 @@ import './ArrowDown.scss';
 export default function ArrowDown(props) {
   
   return (
-          <div class="container-arrow">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
+          <div className="container-arrow">
+            <div className="chevron"></div>
+            <div className="chevron"></div>
+            <div className="chevron"></div>
           </div>
   )
 }

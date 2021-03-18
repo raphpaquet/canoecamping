@@ -2,7 +2,7 @@ import './Menu.scss';
 import { Link } from 'react-router-dom';
 import DropDownMenu from './DropDownMenu';
 
-export default function Menu({ open, ref }) {
+export default function Menu({ open }) {
 
   const closeMenu = () => {
       document.querySelector('.style-menu').classList.remove('transform-open');

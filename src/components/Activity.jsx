@@ -38,21 +38,21 @@ export default function Activity(props) {
         </div>
         <div className="row">
           <div className="column col col-4">
-            <Link to="/canoe"><div className="white-box"><img src="./images/icon-canoe.png" alt="logo" width="70" class="grid-image"/>
+            <Link to="/canoe"><div className="white-box"><img src="./images/icon-canoe.png" alt="logo" width="70" className="grid-image"/>
               <h3>{content.canoe}</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="/reservations" className="button">{content.reserve}</a>
             </div></Link>
           </div>
           <div className="column col col-4">
-            <Link to="/tube"><div className="white-box"><img src="./images/icon-tube.png" alt="logo" width="70" class="grid-image" />
+            <Link to="/tube"><div className="white-box"><img src="./images/icon-tube.png" alt="logo" width="70" className="grid-image" />
               <h3>{content.tube}</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="/reservations" className="button">{content.reserve}</a>
             </div></Link>
           </div>
           <div className="column col col-4">
-            <Link to="/navette"><div className="white-box"><img src="./images/icon-bus.png" alt="logo" width="70" class="grid-image"/>
+            <Link to="/navette"><div className="white-box"><img src="./images/icon-bus.png" alt="logo" width="70" className="grid-image"/>
               <h3>{content.bus}</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="/reservations" className="button">{content.reserve}</a>
